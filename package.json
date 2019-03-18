@@ -37,6 +37,9 @@
     "url": "https://github.com/yeliex/storage/issues"
   },
   "homepage": "https://github.com/yeliex/storage#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.123",
     "@types/node": "^11.11.3",
