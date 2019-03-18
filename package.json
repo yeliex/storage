@@ -1,0 +1,49 @@
+{
+  "name": "@yeliex/storage",
+  "version": "0.1.0",
+  "description": "storage library for javascript",
+  "main": "index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "index.js",
+    "LICENSE",
+    "package.json",
+    "README.md",
+    "yarn.lock",
+    "tsconfig.json"
+  ],
+  "scripts": {
+    "clean": "rm -rf lib/",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeliex/storage.git"
+  },
+  "keywords": [
+    "storage",
+    "local",
+    "storage",
+    "db"
+  ],
+  "author": "yeliex <yeliex@yeliex.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yeliex/storage/issues"
+  },
+  "homepage": "https://github.com/yeliex/storage#readme",
+  "devDependencies": {
+    "@types/lodash": "^4.14.123",
+    "@types/node": "^11.11.3",
+    "lerna": "^3.13.1",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}

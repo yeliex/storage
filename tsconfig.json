@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "es2017",
+    "locale": "zh-CN",
+    "lib": [
+      "esnext"
+    ],
+    "newLine": "LF",
+    "pretty": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "packages"
+  ]
+}
