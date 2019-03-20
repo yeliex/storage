@@ -1,6 +1,6 @@
 {
   "name": "@yeliex/storage",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "storage library for javascript",
   "main": "index.js",
   "types": "lib/index.d.ts",
