@@ -38,15 +38,18 @@
   },
   "homepage": "https://github.com/yeliex/storage#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
+    "@types/fs-extra": "^5.0.5",
     "@types/lodash": "^4.14.123",
     "@types/node": "^11.11.3",
     "lerna": "^3.13.1",
     "typescript": "^3.3.3333"
   },
   "dependencies": {
+    "fs-extra": "^7.0.1",
     "lodash": "^4.17.11"
   }
 }

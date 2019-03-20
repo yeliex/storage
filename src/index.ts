@@ -2,6 +2,7 @@ import { homedir } from 'os';
 import { resolve } from 'path';
 import { stat, access, readFile, writeFile, constants } from 'fs';
 import { promisify } from 'util';
+import { ensureFile } from 'fs-extra';
 import * as assert from 'assert';
 
 const DEFAULT_BASE = homedir();
@@ -65,16 +66,10 @@ export default class Storage<TInstance extends StorageInstance, TOptions extends
      * check file access
      */
     private async init(): Promise<Boolean> {
-        try {
-            const state = await promisify(stat)(this.file);
-            const accessible = await promisify(access)(this.file, constants.R_OK | constants.W_OK).then(() => true, () => false);
-            assert(state.isFile() && accessible, 'target file must be a file and have access to read or write');
-        } catch (e) {
-            if (e.code !== 'ENOENT') {
-                throw e;
-            }
-            await promisify(writeFile)(this.file, '[]', 'utf8');
-        }
+        await ensureFile(this.file);
+        const state = await promisify(stat)(this.file);
+        const accessible = await promisify(access)(this.file, constants.R_OK | constants.W_OK).then(() => true, () => false);
+        assert(state.isFile() && accessible, 'target file must be a file and have access to read or write');
 
         this.readyStat = true;
 
@@ -89,7 +84,7 @@ export default class Storage<TInstance extends StorageInstance, TOptions extends
         await this.ready();
         this.readyStat = promisify(readFile)(this.file, 'utf8').then((res) => {
             this.readyStat = true;
-            return JSON.parse(res);
+            return JSON.parse(res || '[]');
         });
         return this.readyStat;
     }

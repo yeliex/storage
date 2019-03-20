@@ -1,9 +1,10 @@
+const {resolve} = require('path');
 const Storage = require('../index');
 
 const storage = new Storage({
   name: 'test',
   filename: '.test',
-  base: __dirname,
+  base: resolve(__dirname,'test/sub'),
 });
 
 (async () => {
